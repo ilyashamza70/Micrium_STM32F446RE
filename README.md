@@ -1,5 +1,5 @@
 # Micrium_STM32F446RE
-Porting Micrium OS on STM32 Nucleo Board F446RE.
+Porting Micrium OS on STM32 Nucleo Board F446RE.\n
 The sourse code for micrium OS was obtained from the public repository
 of Weston Embeded Solution, the official guardian of the Code.
 A little about Micrium (uC/OS), it is a RTOS with a premptive realt time kernel,

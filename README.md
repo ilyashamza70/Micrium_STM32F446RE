@@ -17,12 +17,16 @@ Running a simple Blinking task in MicriumOS, using the Nucleo board.
 
 ## Setup
 To be able to setup the environment, we required some development tools.
-We needed the configuration data and parameters for our specific board along with an environment to build and flash our code onto the board. 
+We needed the configuration data and parameters for our specific board along with an environment to build
+and flash our code onto the board. 
 For this we made use of
-###  PlatformIO
-            *italic* PlatformIO is a cross-platform IDE (Integrated Development Environment) for microcontroller-based embedded systems and embedded development. PlatformIO IDE can be installed on top of Visual Studio Code, which is what we have done for this project. 
-###	STM32CubeMX
-            *italic* STM32CubeMX is a graphical software, Graphical User Interface (GUI), offered by ST to help with the configuration and initialization of C-code for STM32 microcontrollers and microprocessors. 
+###   PlatformIO
+            *PlatformIO is a cross-platform IDE (Integrated Development Environment) for microcontroller-based embedded 
+            systems and embedded development. PlatformIO IDE can be installed on top of Visual Studio Code, which is what
+            we have done for this project.*
+###    STM32CubeMX
+            *STM32CubeMX is a graphical software, Graphical User Interface (GUI), offered by ST to help with the 
+            configuration and initialization of C-code for STM32 microcontrollers and microprocessors.*
 
 
 

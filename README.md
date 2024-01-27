@@ -26,7 +26,8 @@ PlatformIO is a cross-platform IDE (Integrated Development Environment)
 for microcontroller-based embedded systems and embedded development.
 PlatformIO IDE can be installed as an extension of Visual Studio Code 
 dierectly or downloaded from this page [PLATFORM_IO](https://platformio.org/).
-            
+This allowed us to easily test debug and program our board.
+
 ####    Visual Studio Code
 This was the main IDE where our software was built custom specific for
 our CPU, an ARM Cortex-M4. Here is where we integrated Micrium OS in 
@@ -42,19 +43,28 @@ C-code for the STM32 microcontrollers and microprocessors, and can
 be easily downloaded here [STM32Cubef4](https://www.st.com/en/embedded-software/stm32cubef4.html).
 
 ## Environment
-Easy to setup from the STM32CubeIDE by selecting the right board, in our case 
-STM32-F446RE and than configure a SYSCLK, 16MHz in our case.
-Thanks to the GUI you can easily configure and integrate the 
-right peripherals or GPIO like for us. For the pourpose 
-of demonstarting we also added a USART 
+Easy to setup and generate the appropriate files
+from the STM32CubeIDE by selecting the right board, in our case 
+STM32-F446RE and than configure a SYSCLK, like 16MHz.
+Thanks to the GUI you can easily configure and add the 
+right peripherals or GPIO with their configuration. 
+For the pourpose of demonstarting we also added a USART
+periphal to display how easy it is to integrate and than 
+use.
+This first step allowed us to generate the .ioc file 
+as well as the HAL module driver and some other basic
+board file as part of the BSP (board support package)
+2nd Step is to create a project with platformIO selecting
+the appropriate board. This project is where we will work,
+after integrating all the BSP files and CSMIS files in 
+the project directory.
 
-# CPU Specific file
+## RTOS
+Next steps concerned the porting of Micrium
 
-# Start file
+## Start file
 
-# Main 
+## Main 
 
-# Running the OS
-
-# Running the Task
+## Running the Task
 

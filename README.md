@@ -8,7 +8,7 @@ A little about Micrium (uC/OS), it is a RTOS with a premptive realt time kernel,
 with countless applications and stack support such as TCP, IP, DHCP, CAN, Client,
 Server, FTP, HTTP...
 
-The preemptive kernel aloows higher priorities task to stop the execution of lower
+The preemptive kernel allows higher priorities task to stop the execution of lower
 priority stack, and gain control of the CPU until it is required;
 In embedded system it becomes necessary to run safety and time critical operations
 to allow the correct response to any errors or external signals.

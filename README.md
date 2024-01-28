@@ -47,14 +47,17 @@ Easy to setup and generate the appropriate files
 from the STM32CubeIDE by selecting the right board, in our case 
 STM32-F446RE.
 #### The pinout configuration IOC file:
-  Configure pin PA5 as GPIO output and rename to LD2
+  Configure pin PA5 as GPIO output and rename to LD2.
+  
   PA5  ->  LED2;
-  Add USART2 from connectivity and configure the following pins
-  as USART2_TX and USART2_RX
-  PA2  ->  USART2_TX 
-  PA3  ->  USART2_RX
-  plus make sure that in System Core under Debug JTAG
-  STLINK is selected.
+  Add USART2 from connectivity and configure the following pins.
+  
+  as USART2_TX and USART2_RX.
+  
+  PA2  ->  USART2_TX;
+  PA3  ->  USART2_RX;
+  
+  plus make sure that in System Core under Debug JTAG ST-LINK is selected.
 #### Clock Configuration:
   16 MHz HCLK is enough for us giving both SYSCLK a 16MHz
   as well as to the Cortex System Timer.

@@ -50,11 +50,13 @@ STM32-F446RE.
   Configure pin PA5 as GPIO output and rename to LD2.
   
   PA5  ->  LED2;
+  
   Add USART2 from connectivity and configure the following pins.
   
   as USART2_TX and USART2_RX.
   
   PA2  ->  USART2_TX;
+  
   PA3  ->  USART2_RX;
   
   plus make sure that in System Core under Debug JTAG ST-LINK is selected.
@@ -95,12 +97,16 @@ Our Working Tree looks like:
 ![image](https://github.com/ilyashamza70/Micrium_STM32F446RE/assets/70276386/eb606d82-61c5-4c91-860a-80c6f3142625)
 
 Where Lib contains all the micrium files achieved from the uC/OS3 repository.
-
-
-
-## Start file
+This includes cfg, uC-CPU, uC-LIB, uC-OS3.
+For more specification refer to the official Micrium porting Documentation [here](https://micrium.atlassian.net/wiki/spaces/osiiidoc/pages/132507/Porting+uC-OS-III).
 
 ## Main 
+
+In the main after the initialization of the HAL module and the SystemClock, alongside GPIO
+and USART2 we sart the initialization process for the micrium OS.
+Check main.c file for reference and uC documentation on functions for starting and the OS
+as well as creating a task, configure it's TCB... 
+
 
 ## Running the Task
 

@@ -79,17 +79,19 @@ HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);  // Should work fine than
 press reset button to see if is toggled again & try debuggig
 
 ## RTOS
-First thing open project folder on Visual Code and than use PLAFORMIO
+First thing open project folder on Visual Code and than use PLATFORMIO
 to create a project, select again our Board, this will generate .pio\build files
 that will alllow us to build and run our project on our target.
 To do so first we need to add the project configurations in stm32pio.ini such as 
 location of cubeMX files and ioc_file as well as Inc files and Src files.
-The directories are easy to locate as we created the project in the exsisting foled.
-For more check stm32pio.ini platformio.ini files.
-Now that our directory and dependencies are satisfied we need to add uC/OS in the LIB fold of our project.
+The directories are easy to locate as we created the project in the exsisting folder.
+For more check stm32pio.ini and platformio.ini files.
+Now that our directory and dependencies are satisfied we need to add uC/OS in the LIB folder of our project.
 Our Working Tree looks like:
+
 ![image](https://github.com/ilyashamza70/Micrium_STM32F446RE/assets/70276386/eb606d82-61c5-4c91-860a-80c6f3142625)
-Where Lib contains all the micrium files.
+
+Where Lib contains all the micrium files achieved from the uC/OS3 repository.
 
 
 

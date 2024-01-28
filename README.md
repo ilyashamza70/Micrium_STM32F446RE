@@ -45,7 +45,39 @@ be easily downloaded here [STM32Cubef4](https://www.st.com/en/embedded-software/
 ## Environment
 Easy to setup and generate the appropriate files
 from the STM32CubeIDE by selecting the right board, in our case 
-STM32-F446RE and than configure a SYSCLK, like 16MHz.
+STM32-F446RE.
+### The pinout configuration IOC file:
+  Configure pin PA5 as GPIO output and rename to LD2
+  PA5  ->  LED2;
+  Add USART2 from connectivity and configure the following pins
+  as USART2_TX and USART2_RX
+  PA2  ->  USART2_TX 
+  PA3  ->  USART2_RX
+  plus make sure that in System Core under Debug JTAG
+  STLINK is selected.
+### Clock Configuration:
+  16 MHz HCLK is enough for us giving both SYSCLK a 16MHz
+  as well as to the Cortex System Timer.
+  using the HSI RC on the board we can go up to 180 MHz frequencies.
+### Project Manager:
+  Give the name and select the STM32Cube toolchain which will
+  be read by platformIO later.
+### Code Generator:
+  Select Copy only necessary files as well as genrate peripheral 
+  initialization as pair of .c/.h files.
+### In the advanced section:
+  you can see which peripherals will be created and
+  initializade from the HAL driver file.
+
+Now we generate the code and shift our focus on the PLATFORMIO
+and the OS configuration, as we have generated all necessary files to run the board.
+Here you can also test, by adding a toggle function in the while loop of main.c, to test the boards
+LED before moving on.
+HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);  // Should work fine than press reset button to see if is toggled again & try debuggig
+  
+  
+
+and than configure a SYSCLK, like 16MHz.
 Thanks to the GUI you can easily configure and add the 
 right peripherals or GPIO with their configuration. 
 For the pourpose of demonstarting we also added a USART

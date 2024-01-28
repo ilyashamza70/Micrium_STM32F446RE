@@ -114,14 +114,18 @@ Then we create a task with Name,function name, priority, task stack size, limit 
 
 Again we check for errors before starting the OS Scheduler with OSStart(&os_err)
 from where our application should never exit, keep executing the task it is required.
-Behaviour achieved by assignin the OS start to the reset handler in the startup file.
+Behaviour achieved by assignin the OS start to the reset handler in the startup file,
+we can also check this by pressing the rest button on the board from the LED behaviour.
 
+official micrium manual [document](https://www.analog.com/media/en/dsp-documentation/software-manuals/Micrium-uCOS-III-UsersManual.pdf)
 ## Running the Task
 
 Running the task is pretty straight forward as after the operating system has been started it keeps calling
-all it's process, which for us is LEDTASK.
+all it's TASK, which for us is LEDTASK.
 
-Here we simply initialize code and than in an endlees loop we Toggle the LD2 pin 
-add a small delay, various params can be checked,300 ms, 600ms, 900ms ...
-than turn off the LED.
+Here we simply initialize the OS_err and than in an endlees loop we Toggle the LD2 pin 
+add a small delay, various times can be checked,300 ms, 600ms, 900ms with OSTimeDlyHMSM(0, 0, 0, 300, OS_OPT_TIME_HMSM_NON_STRICT, &os_err);
+than we turn off the LED.
 Lastly we check for OS_err again in case any problems occurs.
+This lays the ground for runnig Micrium OS on STM32F446RE and can be further
+customized and also can be used as a starting point.

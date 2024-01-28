@@ -103,10 +103,25 @@ For more specification refer to the official Micrium porting Documentation [here
 ## Main 
 
 In the main after the initialization of the HAL module and the SystemClock, alongside GPIO
-and USART2 we sart the initialization process for the micrium OS.
-Check main.c file for reference and uC documentation on functions for starting and the OS
-as well as creating a task, configure it's TCB... 
+and USART2 we start the initialization process for the micrium OS.
+Check main.c file for reference and uC documentation on functions for starting the OS
+as well as creating a task, configure it's TCB...
+In our main we initialize the OS_ERR and we initialize the OS with OS_Initi(&os_err),
+Before running it we check for any errors and create our task before starting OS.
+You can see the TCB structure for creating a LED Toggle task with a delay using the
+HAL time delay functions.
+Then we create a task with Name,function name, priority, task stack size, limit for stack...
 
+Again we check for errors before starting the OS Scheduler with OSStart(&os_err)
+from where our application should never exit, keep executing the task it is required.
+Behaviour achieved by assignin the OS start to the reset handler in the startup file.
 
 ## Running the Task
 
+Running the task is pretty straight forward as after the operating system has been started it keeps calling
+all it's process, which for us is LEDTASK.
+
+Here we simply initialize code and than in an endlees loop we Toggle the LD2 pin 
+add a small delay, various params can be checked,300 ms, 600ms, 900ms ...
+than turn off the LED.
+Lastly we check for OS_err again in case any problems occurs.
